@@ -64,15 +64,15 @@ class PyCalcWin(QMainWindow):
 
     
 
-def main():
-    """PyCalc's main function."""
-    pycalcApp = QApplication([])
-    pycalcWindow = PyCalcWin()
-    pycalcWindow.show()
-    # print(pycalcWindow.)
-    PyCalc(model=evaluateExpression, view=pycalcWindow)
-    sys.exit(pycalcApp.exec())
+# def main():
+#     """PyCalc's main function."""
+#     pycalcApp = QApplication([])
+#     pycalcWindow = PyCalcWin()
+#     pycalcWindow.show()
+#     # print(pycalcWindow.)
+#     PyCalc(model=evaluateExpression, view=pycalcWindow)
+#     sys.exit(pycalcApp.exec())
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
