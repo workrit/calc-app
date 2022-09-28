@@ -79,7 +79,7 @@ class PyCalc:
 
     def _connectSignalAndSlots(self):
         for keySymbol,button in self._view.buttonMap.items():
-            if keySymbol!="=" or keySymbol!="C":
+            if keySymbol not in {"=", "C"}:
                 button.clicked.connect(
                     partial(self._buildExpression,keySymbol)
                 )
@@ -90,7 +90,7 @@ class PyCalc:
 def evaluateExpression(expression):
         """Evaluate an expression (Model)."""
         try:
-            print(expression)
+            # print(expression)
             result = str(eval(expression, {}, {}))
         except Exception:
             
@@ -104,6 +104,7 @@ def main():
     pycalcApp = QApplication([])
     pycalcWindow = PyCalcWin()
     pycalcWindow.show()
+    # print(pycalcWindow.)
     PyCalc(model=evaluateExpression, view=pycalcWindow)
     sys.exit(pycalcApp.exec())
 
