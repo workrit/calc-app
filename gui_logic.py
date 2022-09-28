@@ -5,7 +5,7 @@ from PyQt6.QtWidgets import (QLineEdit,
                              QApplication, QLabel, QWidget, QPushButton, QVBoxLayout, QMainWindow, QGridLayout)
 
 # 240 * 240 layout
-WINDOW_SIZE = 235
+WINDOW_SIZE = 500
 # ERROR_MSG="INVALID EXPRESSION"
 
 class PyCalcWin(QMainWindow):
@@ -22,7 +22,7 @@ class PyCalcWin(QMainWindow):
 
     def _createDisplay(self):
         self.display = QLineEdit()
-        self.display.setFixedHeight(35)
+        self.display.setFixedHeight(65)
         self.display.setAlignment(Qt.AlignmentFlag.AlignRight)
         self.display.setReadOnly(True)
         self.generalLayout.addWidget(self.display)
@@ -42,7 +42,7 @@ class PyCalcWin(QMainWindow):
         for row, keys in enumerate(keyBoard):
             for col, key in enumerate(keys):
                 self.buttonMap[key] = QPushButton(key)
-                self.buttonMap[key].setFixedSize(40, 40)
+                self.buttonMap[key].setFixedSize(90, 90)
                 buttonLayout.addWidget(self.buttonMap[key], row, col)
         self.generalLayout.addLayout(buttonLayout)
 
