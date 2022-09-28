@@ -2,13 +2,13 @@ from ast import Expression
 from distutils.log import ERROR
 import gui_logic
 from functools import partial
-
+ERROR_MSG="INVALID INPUT"
 def evaluateExpression(expression):
         """Evaluate an expression (Model)."""
         try:
             result = str(eval(expression, {}, {}))
         except Exception:
-            result = gui_logic.ERROR_MSG
+            result =ERROR_MSG
         return result
 
 class PyCalc:
@@ -22,14 +22,14 @@ class PyCalc:
         self._view.setDisplayText(result)
     
     def _buildExpression(self,subExpression):
-        if self._view.displayText()==gui_logic.ERROR_MSG:
+        if self._view.displayText()==ERROR_MSG:
             self._view.clearDisplay()
         expression=self._view.displayText()+subExpression
         self._view.setDisplayText(expression)
 
     def _connectSignalAndSlots(self):
         for keySymbol,button in self._view.buttonMap.items():
-            if keySymbol!="=" or keySymbol!="C":
+            if keySymbol not in {"=", "C"}:
                 button.clicked.connect(
                     partial(self._buildExpression,keySymbol)
                 )
