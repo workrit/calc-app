@@ -1,10 +1,10 @@
 import sys
-from functools import partial
+# from functools import partial
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import (QLineEdit,
                              QApplication, QLabel, QWidget, QPushButton, QVBoxLayout, QMainWindow, QGridLayout)
 
-# 240 * 240 layout
+# 500 * 500 layout
 WINDOW_SIZE = 500
 # ERROR_MSG="INVALID EXPRESSION"
 
